@@ -131,7 +131,7 @@ public class EnemyShip : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log(other.gameObject.tag);
         if(other.gameObject.tag.Equals("Shield")) {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreController>().IncrementScore(15);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().IncrementScore(15);
             health = 0;
         }
         if(other.gameObject.tag.Equals("Player")){

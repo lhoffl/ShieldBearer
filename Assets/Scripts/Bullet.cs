@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour {
                 if(is_reflected) {
                     Instantiate(explosion_prefab, transform.position, transform.rotation);
                     GameObject.Destroy(enemy.gameObject);
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreController>().IncrementScore(30);
+                    GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().IncrementScore(30);
                 }
             }
 
