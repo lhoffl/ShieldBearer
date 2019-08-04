@@ -71,7 +71,7 @@ public class EnemyShip : MonoBehaviour {
                 break;
         }
 
-        laserSFX_source = AddAudio(laserSFX_clip, false, false, 0.5f);
+        laserSFX_source = AddAudio(laserSFX_clip, false, false, 0.3f);
         explosionSFX_source = AddAudio(explosionSFX_clip, false, false, 0.5f);
     }
 

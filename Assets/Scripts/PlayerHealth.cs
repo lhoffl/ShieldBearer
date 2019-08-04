@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour {
         if(health <= 0) {
             health = 0;
             GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().StopMainBGMLoop();
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().ResetScore();
             SceneManager.LoadScene(sceneName:"GameOver");
         }
         healthbar.x = health;

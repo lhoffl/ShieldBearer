@@ -10,6 +10,10 @@ public class MenuController : MonoBehaviour
     public int selected_index = 0;
 
     public Text menu;
+
+    public Image logo;
+    public Sprite for_the_real_fans;
+
     /* 
     public Color default_color;
     public Color selected_color;
@@ -39,6 +43,11 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().GetLastScore() >= 1000) {
+            logo.sprite = for_the_real_fans;
+            logo.GetComponent<RectTransform>().localScale = new Vector3(0.5f,0.5f,0f);
+        } 
         /*
         int index = 0;
         foreach(Text t in buttonList)

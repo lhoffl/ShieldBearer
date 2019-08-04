@@ -51,7 +51,7 @@ public class Asteroid : MonoBehaviour {
         _body.rotation = rotation_speed;
         _body.velocity = speed;
 
-        hitSFX_source = AddAudio(hitSFX_clip, false, false, 0.3f);
+        hitSFX_source = AddAudio(hitSFX_clip, false, false, 0.5f);
     }
 
     void Update() {
@@ -139,13 +139,14 @@ public class Asteroid : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider) 
     {
-        hitSFX_source.PlayOneShot(hitSFX_clip, 0.2f);
+        hitSFX_source.Play();
         
         Debug.Log("Asteroid hit");
 
         if(collider.tag.Equals("Player")) {
 
             Debug.Log("Asteroid hit the player");
+
             collider.gameObject.GetComponent<PlayerHealth>().DecrementHealthBar(50);
             GameObject.Destroy(this.gameObject);
         }

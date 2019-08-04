@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour {
 
-    private int _last_score = 0;
+    private int _high_score = 0;
     private int score;
     public Text _score_text;
+    public Text _high_score_text;
 
     void Start() {
         score = 0;
@@ -23,9 +24,16 @@ public class ScoreController : MonoBehaviour {
         return score;
     }
 
+    public void ResetScore() {
+        if(score > _high_score) {
+            _high_score = score;
+            _high_score_text.text = "High Score | " + _high_score;
+        }
+        score = 0; 
+    }
+
     public int GetLastScore() {
-        _last_score = score;
-        return _last_score;
+        return _high_score;
     }
 
 }
