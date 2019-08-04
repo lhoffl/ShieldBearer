@@ -35,7 +35,7 @@ public class ShipController : MonoBehaviour
         changePos(0, (amplitude/range_mod));
 
         if(count == 60) {
-            GetComponent<ScoreController>().IncrementScore(1);
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().IncrementScore(1);
             count = 0;
         } else {
             count++;

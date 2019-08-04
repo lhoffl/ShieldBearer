@@ -95,7 +95,7 @@ public class Asteroid : MonoBehaviour {
                 //hitSFX_source.PlayOneShot(hitSFX_clip, 0.2f);
 
                 if(is_deflected) {
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<ScoreController>().IncrementScore(150);
+                    GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().IncrementScore(150);
                     is_deflected = false;
                 }
             }

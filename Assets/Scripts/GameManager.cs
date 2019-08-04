@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
     }
     public static GameManager instance = null;
 
+    private int score = 0;
+    private int difficulty_modifier = 2;
+
     private void Awake() {
         if(instance == null) {
             instance = this;
@@ -44,6 +47,21 @@ public class GameManager : MonoBehaviour {
         screen_y[0] = (screen_area.y) * -1;
         screen_y[1] = (screen_area.y);
     }
+
+    private void Update() {
+        score = GetComponent<ScoreController>().GetCurrentScore();
+        GetComponent<EnemyManager>().total_enemies = ((int)Mathf.Sqrt(score/12)) * difficulty_modifier;
+        GetComponent<AsteroidManager>().total_asteroids = ((int)Mathf.Sqrt(score/8)) * difficulty_modifier;
+
+        if(score <= 100) {
+            GetComponent<AsteroidManager>().total_asteroids = 10;
+        }
+
+        if(score >= 700) {
+            difficulty_modifier = 3;
+        }
+    }
+
 
     public static Vector2 GetGameArea() {
         return game_area;
