@@ -27,8 +27,9 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey("up"))) changePos(0, 0.1f);
-        if (Input.GetKey("down")) changePos(0,-0.1f);
+        // NO
+        //if ((Input.GetKey("up"))) changePos(0, 0.1f);
+        //if (Input.GetKey("down")) changePos(0,-0.1f);
 
         ListAimlessly();
 
