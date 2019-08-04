@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour {
     private AudioSource loopMenu_source;
     private AudioSource stopMenu_source;
 
+    private bool play_main_loop = false;
+
     void Start() {
         startBGM_source = AddAudio(startBGM_clip, false, true, 0.8f);
         loopBGM_source = AddAudio(loopBGM_clip, true, true, 0.8f);
@@ -25,7 +27,9 @@ public class AudioManager : MonoBehaviour {
         loopMenu_source = AddAudio(loopMenu_clip, true, true, 0.8f);
         stopMenu_source = AddAudio(stopMenu_clip, false, true, 0.8f);
 
-        loopMenu_source.Play();
+        if(!loopMenu_source.isPlaying) {
+            loopMenu_source.Play();
+        }
     }
 
     public AudioSource AddAudio(AudioClip clip, bool loop, bool play_awake, float vol) {
@@ -39,14 +43,28 @@ public class AudioManager : MonoBehaviour {
     }
 
     void Update() {
-        if(!loopMenu_source.isPlaying && !startBGM_source.isPlaying) {
+        if(play_main_loop && !loopMenu_source.isPlaying && !startBGM_source.isPlaying && !loopBGM_source.isPlaying) {
             loopBGM_source.Play();
         }
     }
 
     public void StartMainBGMLoop() {
+        play_main_loop = true;
         loopMenu_source.Stop();
         stopMenu_source.Play();
         startBGM_source.Play();
     }
+
+    public void RestartMenuLoop() {
+        if(!loopMenu_source.isPlaying) {
+            loopMenu_source.Play();
+        }
+    }
+
+    public void StopMainBGMLoop() {
+        play_main_loop = false;
+        loopBGM_source.Stop();
+        stopBGM_source.Play();
+    }
+
 }

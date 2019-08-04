@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour {
         health -= damage;
         if(health <= 0) {
             health = 0;
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().StopMainBGMLoop();
             SceneManager.LoadScene(sceneName:"GameOver");
         }
         healthbar.x = health;

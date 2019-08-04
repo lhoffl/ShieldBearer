@@ -12,6 +12,9 @@ public class CreditsController : MonoBehaviour
     void Update()
     {
         wait++;
-        if(wait >= 10 && Input.GetKeyDown("space")) SceneManager.LoadScene("Main Menu");
+        if(wait >= 10 && Input.GetKeyDown("space")) {
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().RestartMenuLoop();
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 }

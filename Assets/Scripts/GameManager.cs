@@ -6,11 +6,17 @@ public class GameManager : MonoBehaviour {
     public static Vector2 game_area = new Vector2(30,20);
     public static Vector2 screen_area = new Vector2(game_area.x/4, game_area.y/4);
 
-    void Start() {
-    }
+    public static GameManager instance = null;
 
-    void Update() {
-        
+    private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else if (instance != null) {
+            GameObject.Destroy(this.gameObject);
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public static Vector2 GetGameArea() {

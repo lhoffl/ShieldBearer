@@ -114,6 +114,8 @@ public class MenuController : MonoBehaviour
             case 0:
                 //Play Game
                 Debug.Log("Play Selected");
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioManager>().StartMainBGMLoop();
+                GameObject.FindGameObjectWithTag("GameManager").GetComponent<EnemyManager>().enabled = true;
                 SceneManager.LoadScene("GameScene");
                 break;
             case 1:
