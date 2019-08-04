@@ -12,7 +12,7 @@ public class Asteroid : MonoBehaviour {
     public float rotation_speed = 1.0f;
 
     public float probability = 0.5f;
-    public float distance_to_remove = 20.0f;
+    public float distance_to_remove = 30.0f;
     
     public Vector2 target_position;
 
