@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -113,11 +114,12 @@ public class MenuController : MonoBehaviour
             case 0:
                 //Play Game
                 Debug.Log("Play Selected");
-                //SceneManager.LoadScene("Gamescene");
+                SceneManager.LoadScene("GameScene");
                 break;
             case 1:
                 //Credits
                 Debug.Log("Credits Selected");
+                SceneManager.LoadScene("Credits");
                 break;
             case 2:
                 //Exit
