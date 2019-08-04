@@ -365,9 +365,94 @@ PrefabInstance:
         type: 3}
       propertyPath: _score_text
       value: 
+      objectReference: {fileID: 804449100}
+    - target: {fileID: 3523497351544777049, guid: 5aa402dc528ffc7478e47b54b6289c7c,
+        type: 3}
+      propertyPath: shipSFX_clip
+      value: 1b94ba4157e7d61e27075d5bb73f26cfcbb223fe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aa402dc528ffc7478e47b54b6289c7c, type: 3}
+--- !u!1 &1345380064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1345380068}
+  - component: {fileID: 1345380067}
+  - component: {fileID: 1345380066}
+  - component: {fileID: 1345380065}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345380065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345380064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9ddf1cd772b5841bf1d922f8b579ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroid_prefab: {fileID: 6223108171203806314, guid: 237b2d4177cd1224091a45f82b1000f4,
+    type: 3}
+  total_asteroids: 5
+--- !u!114 &1345380066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345380064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8917124b4da7ad84ba62cd12f35458e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_prefab: {fileID: 2912706659006220803, guid: 1dac234be27e7114194ae0c1f6a92191,
+    type: 3}
+  total_enemies: 5
+--- !u!114 &1345380067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345380064}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47ac65beabc4c9408aae03e1c48b04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startBGM_clip: {fileID: 8300000, guid: 7d54354b60dacfd4fbd1ad0521d4a7f8, type: 3}
+  loopBGM_clip: {fileID: 8300000, guid: 845da1e8dc222b74b9459a513c3d052d, type: 3}
+  stopBGM_clip: {fileID: 8300000, guid: 5bb1b771d76fc0d4d85cc639ebdf58eb, type: 3}
+  loopMenu_clip: {fileID: 8300000, guid: 5b85027655f40444e8cd8cf2cebcc805, type: 3}
+  stopMenu_clip: {fileID: 8300000, guid: 1641c721810a0b349864ab9444c49561, type: 3}
+--- !u!4 &1345380068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345380064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534644927
 GameObject:
   m_ObjectHideFlags: 0
