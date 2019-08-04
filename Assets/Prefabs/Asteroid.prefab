@@ -106,7 +106,8 @@ MonoBehaviour:
   min_size: 0.7
   new_color: {r: 0, g: 0, b: 0, a: 0}
   hitSFX_clip: {fileID: 8300000, guid: dcd05775c74ac5a4d841f4d53dc64dca, type: 3}
-  explosion_prefab: {fileID: 0}
+  explosion_prefab: {fileID: 7686825126282719346, guid: 9ec4bb2c3d22d0247afb5af525552786,
+    type: 3}
 --- !u!50 &6223108171203806294
 Rigidbody2D:
   serializedVersion: 4

@@ -99,7 +99,8 @@ MonoBehaviour:
   health: 10
   bullet_prefab: {fileID: 2621012863530294396, guid: 06d909677eedebc44a42aa9bfe222397,
     type: 3}
-  explosion_prefab: {fileID: 0}
+  explosion_prefab: {fileID: 7686825126282719346, guid: 9ec4bb2c3d22d0247afb5af525552786,
+    type: 3}
   bullet_cooldown: 30
   target_position: {x: 0, y: 0}
   basic_sprite: {fileID: 21300000, guid: c26dda977f2d5284e8269e30dba32a02, type: 3}

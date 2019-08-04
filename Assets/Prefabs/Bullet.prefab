@@ -123,7 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet_life: 30
   speed: 10
-  explosion_prefab: {fileID: 0}
+  explosion_prefab: {fileID: 7686825126282719346, guid: 9ec4bb2c3d22d0247afb5af525552786,
+    type: 3}
   damage: 10
 --- !u!1 &2621012864822269339
 GameObject:
