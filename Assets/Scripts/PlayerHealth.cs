@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
     public Vector2 healthbar;
 
     void Start() {
-        healthbar_location = new Vector2(screen_area.x + buffer_area, screen_area.y + buffer_area);
+        healthbar_location = new Vector2(screen_area.x/2 + buffer_area, screen_area.y + buffer_area);
         healthbar = new Vector2(health, healthbar_width);
     }
 

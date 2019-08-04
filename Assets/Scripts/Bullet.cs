@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public int bullet_life = 30;
+    public int bullet_life = 60;
     public int speed = 10;
     
     public GameObject explosion_prefab;
@@ -48,18 +48,18 @@ public class Bullet : MonoBehaviour {
 
         if(hit != null) {
             if(hit.tag.Equals("Player")) {
-                GameObject.Destroy(this.gameObject);
                 PlayerHealth player = hit.GetComponent<PlayerHealth>();
                 player.DecrementHealthBar(damage);
                 Debug.Log("Player damaged");
+                GameObject.Destroy(this.gameObject);
             }          
 
             if(hit.GetComponent<EnemyShip>() != null) {
                 EnemyShip enemy = hit.GetComponent<EnemyShip>();
                 if(is_reflected) {
                     Instantiate(explosion_prefab, transform.position, transform.rotation);
-                    GameObject.Destroy(enemy.gameObject);
                     GameObject.FindGameObjectWithTag("GameManager").GetComponent<ScoreController>().IncrementScore(30);
+                    GameObject.Destroy(enemy.gameObject);
                 }
             }
 
