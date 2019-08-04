@@ -9712,7 +9712,7 @@ GameObject:
   - component: {fileID: 3523497351544777049}
   - component: {fileID: 3523497351544777048}
   - component: {fileID: 3523497351544777051}
-  - component: {fileID: 3523497351544777046}
+  - component: {fileID: 2988827250289067954}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9830,8 +9830,8 @@ MonoBehaviour:
   healthbar_width: 20
   health: 200
   healthbar: {x: 0, y: 0}
---- !u!58 &3523497351544777046
-CircleCollider2D:
+--- !u!60 &2988827250289067954
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9840,12 +9840,38 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.35
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 0.9}
+    newSize: {x: 1, y: 0.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09672618, y: 0.34901038}
+      - {x: -0.098593995, y: 0.35223973}
+      - {x: -0.1015267, y: 0.05031763}
+      - {x: -0.20014518, y: 0.047527045}
+      - {x: -0.19996242, y: -0.14854686}
+      - {x: -0.40062505, y: -0.15374966}
+      - {x: -0.40062517, y: -0.3525522}
+      - {x: -0.0989764, y: -0.35317707}
+      - {x: -0.0988545, y: -0.44838554}
+      - {x: 0.10062791, y: -0.4480822}
+      - {x: 0.1021356, y: -0.34989616}
+      - {x: 0.40062508, y: -0.3470314}
+      - {x: 0.4044664, y: -0.15195692}
+      - {x: 0.20203172, y: -0.15010402}
+      - {x: 0.20089, y: 0.05215624}
+      - {x: 0.10300142, y: 0.053411387}
+      - {x: 0.09895852, y: 0.34739596}
 --- !u!1 &3523497351584354207
 GameObject:
   m_ObjectHideFlags: 0

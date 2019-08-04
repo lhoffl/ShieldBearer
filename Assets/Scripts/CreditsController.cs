@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class CreditsController : MonoBehaviour
 {
+    
+    int wait = 0;
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space")) SceneManager.LoadScene("Main Menu");
+        wait++;
+        if(wait >= 10 && Input.GetKeyDown("space")) SceneManager.LoadScene("Main Menu");
     }
 }
