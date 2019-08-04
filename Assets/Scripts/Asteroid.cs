@@ -75,7 +75,8 @@ public class Asteroid : MonoBehaviour {
 
         if(hit != null) {
             if(hit.tag.Equals("Player")) {
-                //Time.timeScale = 0;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().DecrementHealthBar(50);
+                GameObject.Destroy(this.gameObject);
             }          
 
             if(hit.GetComponent<Asteroid>() != null) {

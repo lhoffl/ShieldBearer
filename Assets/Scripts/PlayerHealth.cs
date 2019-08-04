@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     public int buffer_area = 5;
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour {
         health -= damage;
         if(health <= 0) {
             health = 0;
+            SceneManager.LoadScene(sceneName:"GameOver");
         }
         healthbar.x = health;
     }
