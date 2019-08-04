@@ -14,8 +14,6 @@ public class ShipController : MonoBehaviour
 
     private float amplitude = 0;
 
-
-    private bool goingUp = true;
     private int count = 0;
 
     // Start is called before the first frame update
