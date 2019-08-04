@@ -443,6 +443,11 @@ PrefabInstance:
       propertyPath: m_Range
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2988827250289067954, guid: 5aa402dc528ffc7478e47b54b6289c7c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3523497351544777048, guid: 5aa402dc528ffc7478e47b54b6289c7c,
         type: 3}
       propertyPath: m_Enabled
