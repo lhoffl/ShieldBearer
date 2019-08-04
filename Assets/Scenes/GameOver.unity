@@ -362,7 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroid_prefab: {fileID: 6223108171203806314, guid: 237b2d4177cd1224091a45f82b1000f4,
     type: 3}
-  total_asteroids: 150
+  total_asteroids: 15
 --- !u!114 &255129070
 MonoBehaviour:
   m_ObjectHideFlags: 0

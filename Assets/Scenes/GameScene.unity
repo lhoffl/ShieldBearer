@@ -458,6 +458,11 @@ PrefabInstance:
       propertyPath: _score_text
       value: 
       objectReference: {fileID: 804449100}
+    - target: {fileID: 3523497351544777049, guid: 5aa402dc528ffc7478e47b54b6289c7c,
+        type: 3}
+      propertyPath: shipSFX_clip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aa402dc528ffc7478e47b54b6289c7c, type: 3}
 --- !u!1 &1345380064
@@ -493,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroid_prefab: {fileID: 6223108171203806314, guid: 237b2d4177cd1224091a45f82b1000f4,
     type: 3}
-  total_asteroids: 15
+  total_asteroids: 5
 --- !u!114 &1345380066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_prefab: {fileID: 2912706659006220803, guid: 1dac234be27e7114194ae0c1f6a92191,
     type: 3}
-  total_enemies: 8
+  total_enemies: 5
 --- !u!114 &1345380067
 MonoBehaviour:
   m_ObjectHideFlags: 0

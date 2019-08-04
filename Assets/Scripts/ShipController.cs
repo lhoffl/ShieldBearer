@@ -21,6 +21,7 @@ public class ShipController : MonoBehaviour
     {
         shipSFX_source = AddAudio(shipSFX_clip, true, true, 0.2f);
         shipSFX_source.Play();
+
     }
 
     // Update is called once per frame
