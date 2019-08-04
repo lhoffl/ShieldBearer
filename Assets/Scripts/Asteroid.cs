@@ -73,11 +73,7 @@ public class Asteroid : MonoBehaviour {
 
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
 
-        if(hit != null) {
-            if(hit.tag.Equals("Player")) {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().DecrementHealthBar(50);
-                GameObject.Destroy(this.gameObject);
-            }          
+        if(hit != null) { 
 
             if(hit.GetComponent<Asteroid>() != null) {
                 Asteroid other = hit.GetComponent<Asteroid>();
@@ -86,6 +82,7 @@ public class Asteroid : MonoBehaviour {
             }
 
             if(hit.tag.Equals("Shield")) {
+                Debug.Log("Asteroid deflected");
                 is_deflected = true;
                 //hitSFX_source.PlayOneShot(hitSFX_clip, 0.2f);
             }
@@ -145,6 +142,13 @@ public class Asteroid : MonoBehaviour {
         hitSFX_source.PlayOneShot(hitSFX_clip, 0.2f);
         
         Debug.Log("Asteroid hit");
+
+        if(collider.tag.Equals("Player")) {
+
+            Debug.Log("Asteroid hit the player");
+            collider.gameObject.GetComponent<PlayerHealth>().DecrementHealthBar(50);
+            GameObject.Destroy(this.gameObject);
+        }
     }
 
     public AudioSource AddAudio(AudioClip clip, bool loop, bool play_awake, float vol) {

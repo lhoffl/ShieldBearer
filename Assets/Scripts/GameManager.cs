@@ -15,9 +15,17 @@ public class GameManager : MonoBehaviour {
     void Start() {
        GetScreenBounds();
     }
+    public static GameManager instance = null;
 
-    void Update() {
-        
+    private void Awake() {
+        if(instance == null) {
+            instance = this;
+        } else if (instance != null) {
+            GameObject.Destroy(this.gameObject);
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
     }
     void GetScreenBounds()
     {
