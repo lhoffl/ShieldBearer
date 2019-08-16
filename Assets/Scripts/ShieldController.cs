@@ -15,10 +15,12 @@ public class ShieldController : MonoBehaviour
     
     private Vector3 shieldPosition;
     private CapsuleCollider2D _collider;
+    private GameObject turn_signal;
 
     // Start is called before the first frame update
     void Start()
     {
+        turn_signal = GameObject.FindGameObjectWithTag("TurnSignal");
         UpdatePosition();
     }
 
@@ -29,6 +31,14 @@ public class ShieldController : MonoBehaviour
 
         if (Input.GetKey("space")) UpdateSpeed(accel_speed);
 
+        if (Input.GetKeyUp("space")) {
+            turn_signal.GetComponent<SpriteRenderer>().flipY = !clockwise;
+            if(clockwise) {
+                turn_signal.transform.localPosition = new Vector3(0, -0.18f, 0);
+            } else {
+                turn_signal.transform.localPosition = new Vector3(0, 0.21f, 0);
+            }
+        }
         UpdatePosition();
         UpdateSpeed(0);
     }

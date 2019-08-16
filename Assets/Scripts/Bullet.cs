@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public int bullet_life = 60;
-    public int speed = 10;
+    public int speed = 8;
     
     public GameObject explosion_prefab;
     
@@ -12,23 +11,25 @@ public class Bullet : MonoBehaviour {
     public int damage = 10;
     private Vector2 target;
 
-    private int bullet_counter = 0;
     private BoxCollider2D _collider;
     private bool is_reflected = false;
+    private Vector2 last_position;
 
     void Start() {
         _collider = GetComponent<BoxCollider2D>();
     }
 
     void Update() {
-        if(bullet_counter < bullet_life) {
-            bullet_counter++;
-        } else {
-            Destroy(this.gameObject);
-        }   
 
         CheckCollision();
 
+        if((Mathf.Abs(Vector2.Distance(GameManager.screen_area, transform.position)) >= 222) || 
+            ((Mathf.Abs(Vector2.Distance((Vector2)transform.position, target))) <= 0.2 && !is_reflected) ||
+            (last_position.Equals(transform.position))) {
+                Destroy(this.gameObject);
+        }
+    
+        last_position = transform.position;
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target, step);
     }
@@ -51,6 +52,7 @@ public class Bullet : MonoBehaviour {
                 PlayerHealth player = hit.GetComponent<PlayerHealth>();
                 player.DecrementHealthBar(damage);
                 Debug.Log("Player damaged");
+                Instantiate(explosion_prefab, transform.position, transform.rotation);
                 GameObject.Destroy(this.gameObject);
             }          
 
@@ -66,7 +68,6 @@ public class Bullet : MonoBehaviour {
             if(hit.tag.Equals("Shield")) {
                 is_reflected = true;
                 speed *= -2;
-                this.bullet_counter = 0;
             }
         }
     }

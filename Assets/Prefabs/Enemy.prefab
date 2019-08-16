@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2912706659006220801}
   - component: {fileID: 2912706659006220800}
   - component: {fileID: 2912706659006220806}
-  - component: {fileID: 2912706659006220807}
   - component: {fileID: 3410467321178433992}
+  - component: {fileID: 3286821476115804950}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2912706659006220803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 2912706659525118865}
   m_Father: {fileID: 0}
@@ -115,22 +115,6 @@ MonoBehaviour:
   speed: 2
   laserSFX_clip: {fileID: 8300000, guid: 838c6b911c87b044f9a48c05b257e105, type: 3}
   explosionSFX_clip: {fileID: 8300000, guid: f78fcf25e1b852649b195b03d81c51b1, type: 3}
---- !u!58 &2912706659006220807
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2912706659006220803}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!50 &3410467321178433992
 Rigidbody2D:
   serializedVersion: 4
@@ -152,6 +136,47 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!60 &3286821476115804950
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912706659006220803}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.7, y: 0.5}
+    newSize: {x: 0.7, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.14909905, y: 0.046162874}
+      - {x: 0.050054885, y: 0.046694923}
+      - {x: 0.047631003, y: 0.1492019}
+      - {x: -0.046639957, y: 0.15102993}
+      - {x: -0.050077893, y: 0.048054464}
+      - {x: -0.1511827, y: 0.048804726}
+      - {x: -0.15239756, y: -0.051016357}
+      - {x: -0.25051498, y: -0.050650027}
+      - {x: -0.25103003, y: -0.14872515}
+      - {x: -0.1466949, y: -0.149675}
+      - {x: -0.14889146, y: -0.050355233}
+      - {x: 0.14678797, y: -0.048281766}
+      - {x: 0.14940484, y: -0.15509501}
+      - {x: 0.24987157, y: -0.15044089}
+      - {x: 0.24696493, y: -0.05368507}
+      - {x: 0.15211484, y: -0.049620084}
 --- !u!1 &2912706659525118864
 GameObject:
   m_ObjectHideFlags: 0
