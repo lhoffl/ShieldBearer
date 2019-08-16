@@ -8,7 +8,7 @@ public class Asteroid : MonoBehaviour {
 
     public float max_speed = 5.0f;
     public float min_speed = -5.0f;
-
+    public int min_damage = 20;
     public float rotation_speed = 1.0f;
 
     public float probability = 0.5f;
@@ -24,7 +24,6 @@ public class Asteroid : MonoBehaviour {
     
     public AudioClip hitSFX_clip;
 
-    
     public GameObject explosion_prefab;
 
     private AudioSource hitSFX_source;
@@ -146,8 +145,11 @@ public class Asteroid : MonoBehaviour {
         if(collider.tag.Equals("Player")) {
 
             Debug.Log("Asteroid hit the player");
-
-            collider.gameObject.GetComponent<PlayerHealth>().DecrementHealthBar(50);
+            Instantiate(explosion_prefab, transform.position, transform.rotation);
+            int damage = Mathf.RoundToInt((this.GetComponent<Rigidbody2D>().mass * 10) * Mathf.Abs(speed.x) * Mathf.Abs(speed.y));
+            damage += min_damage;
+            Debug.Log(damage);
+            collider.gameObject.GetComponent<PlayerHealth>().DecrementHealthBar(damage);
             GameObject.Destroy(this.gameObject);
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public int bullet_life = 60;
+    public int bullet_life = 600;
     public int speed = 10;
     
     public GameObject explosion_prefab;
@@ -51,6 +51,7 @@ public class Bullet : MonoBehaviour {
                 PlayerHealth player = hit.GetComponent<PlayerHealth>();
                 player.DecrementHealthBar(damage);
                 Debug.Log("Player damaged");
+                Instantiate(explosion_prefab, transform.position, transform.rotation);
                 GameObject.Destroy(this.gameObject);
             }          
 
