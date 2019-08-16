@@ -9879,6 +9879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 1
   range_mod: 50
+  speed: 0.025
+  moving_cooldown: 25
   shipSFX_clip: {fileID: 8300000, guid: 6db3933a2e5a89047bc0f87bec810198, type: 3}
 --- !u!114 &3523497351544777051
 MonoBehaviour:
