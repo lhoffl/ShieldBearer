@@ -10,14 +10,23 @@ public class AudioManager : MonoBehaviour {
     public AudioClip loopMenu_clip;
     public AudioClip stopMenu_clip;
 
+    public AudioClip bonusStart_clip;
+    public AudioClip bonusLoop_clip;
+    public AudioClip bonusEnd_clip;
+
     private AudioSource startBGM_source;
     private AudioSource loopBGM_source;
     private AudioSource stopBGM_source;
+
+    private AudioSource bonusStart_source;
+    private AudioSource bonusLoop_source;
+    private AudioSource bonusEnd_source;
 
     private AudioSource loopMenu_source;
     private AudioSource stopMenu_source;
 
     private bool play_main_loop = false;
+    private bool play_bonus_loop = false;
 
     void Start() {
         startBGM_source = AddAudio(startBGM_clip, false, true, 0.8f);
@@ -26,6 +35,10 @@ public class AudioManager : MonoBehaviour {
 
         loopMenu_source = AddAudio(loopMenu_clip, true, true, 0.8f);
         stopMenu_source = AddAudio(stopMenu_clip, false, true, 0.8f);
+
+        bonusStart_source = AddAudio(bonusStart_clip, false, true, 0.5f);
+        bonusLoop_source = AddAudio(bonusLoop_clip, true, true, 0.8f);
+        bonusEnd_source = AddAudio(bonusEnd_clip, false, true, 0.5f);
 
         if(!loopMenu_source.isPlaying) {
             loopMenu_source.Play();
@@ -43,8 +56,13 @@ public class AudioManager : MonoBehaviour {
     }
 
     void Update() {
-        if(play_main_loop && !loopMenu_source.isPlaying && !startBGM_source.isPlaying && !loopBGM_source.isPlaying) {
-            loopBGM_source.Play();
+        if(loopMenu_source.isPlaying) {
+            StopMainBGMLoop();
+        }
+        if((play_main_loop || play_bonus_loop ) && 
+            !startBGM_source.isPlaying && !bonusStart_source.isPlaying && !loopBGM_source.isPlaying && !bonusLoop_source.isPlaying) {
+                if(play_main_loop) loopBGM_source.Play();
+                if(play_bonus_loop) bonusLoop_source.Play();
         }
     }
 
@@ -62,9 +80,27 @@ public class AudioManager : MonoBehaviour {
     }
 
     public void StopMainBGMLoop() {
+        if(play_main_loop) {
+            startBGM_source.Stop();
+            loopBGM_source.Stop();
+            stopBGM_source.Play();
+            play_main_loop = false;
+        }
+
+        if(play_bonus_loop) { 
+            bonusStart_source.Stop();
+            bonusLoop_source.Stop();
+            bonusEnd_source.Play();
+            play_bonus_loop = false;
+        }
+    }
+
+    public void StartBonusLoop() {
         play_main_loop = false;
-        loopBGM_source.Stop();
-        stopBGM_source.Play();
+        play_bonus_loop = true;
+        loopMenu_source.Stop();
+        stopMenu_source.Play();
+        bonusStart_source.Play();
     }
 
 }
