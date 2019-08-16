@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour {
 
     private BoxCollider2D _collider;
     private bool is_reflected = false;
+    private Vector2 last_position;
 
     void Start() {
         _collider = GetComponent<BoxCollider2D>();
@@ -22,11 +23,13 @@ public class Bullet : MonoBehaviour {
 
         CheckCollision();
 
-        if(Mathf.Abs(Vector2.Distance(GameManager.screen_area, transform.position)) >= 222) {
-            Debug.Log(Vector2.Distance(GameManager.screen_area, transform.position));
-            Destroy(this.gameObject);
+        if((Mathf.Abs(Vector2.Distance(GameManager.screen_area, transform.position)) >= 222) || 
+            ((Mathf.Abs(Vector2.Distance((Vector2)transform.position, target))) <= 0.2 && !is_reflected) ||
+            (last_position.Equals(transform.position))) {
+                Destroy(this.gameObject);
         }
     
+        last_position = transform.position;
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target, step);
     }
