@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public int bullet_life = 600;
-    public int speed = 10;
+    public int speed = 8;
     
     public GameObject explosion_prefab;
     
@@ -12,7 +11,6 @@ public class Bullet : MonoBehaviour {
     public int damage = 10;
     private Vector2 target;
 
-    private int bullet_counter = 0;
     private BoxCollider2D _collider;
     private bool is_reflected = false;
 
@@ -21,14 +19,14 @@ public class Bullet : MonoBehaviour {
     }
 
     void Update() {
-        if(bullet_counter < bullet_life) {
-            bullet_counter++;
-        } else {
-            Destroy(this.gameObject);
-        }   
 
         CheckCollision();
 
+        if(Mathf.Abs(Vector2.Distance(GameManager.screen_area, transform.position)) >= 222) {
+            Debug.Log(Vector2.Distance(GameManager.screen_area, transform.position));
+            Destroy(this.gameObject);
+        }
+    
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, target, step);
     }
@@ -67,7 +65,6 @@ public class Bullet : MonoBehaviour {
             if(hit.tag.Equals("Shield")) {
                 is_reflected = true;
                 speed *= -2;
-                this.bullet_counter = 0;
             }
         }
     }
