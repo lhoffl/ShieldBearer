@@ -101,6 +101,10 @@ public class Asteroid : MonoBehaviour {
         }
     }
 
+    public bool IsDeflected() {
+        return is_deflected;
+    }
+
     void RandomizeLook()
     {
         //Size

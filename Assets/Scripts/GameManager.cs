@@ -50,8 +50,8 @@ public class GameManager : MonoBehaviour {
 
     private void Update() {
         score = GetComponent<ScoreController>().GetCurrentScore();
-        GetComponent<EnemyManager>().total_enemies = ((int)Mathf.Sqrt(score/12)) * difficulty_modifier;
-        GetComponent<AsteroidManager>().total_asteroids = ((int)Mathf.Sqrt(score/8)) * difficulty_modifier;
+        GetComponent<EnemyManager>().total_enemies = (((int)Mathf.Sqrt(score/20)) * difficulty_modifier);
+        GetComponent<AsteroidManager>().total_asteroids = ((int)Mathf.Sqrt(score/12)) * difficulty_modifier;
 
         if(score <= 100) {
             GetComponent<AsteroidManager>().total_asteroids = 10;
