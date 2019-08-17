@@ -1407,6 +1407,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603500365}
   m_CullTransparentMesh: 0
+--- !u!1 &1660095505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8494453257364414932, guid: b96fee6e806b68e4e9724a08a16311b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8494453257519448622}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660095506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660095505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e88d920c32332429ad22427835b623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthpack_prefab: {fileID: 4901201923316771727, guid: 7dd42666c9496004d9e408a474ddd63c,
+    type: 3}
+  total_healthpacks: 1
+  chance_for_healthpack: 35
+  item_spawn_timer: 600
 --- !u!1001 &1667452555
 PrefabInstance:
   m_ObjectHideFlags: 0
